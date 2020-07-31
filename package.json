@@ -4,6 +4,8 @@
   "description": "Instagram clone with Express + Prisma + React and React Native",
   "scripts": {
     "deploy": "prisma deploy",
+    "generate": "prisma generate",
+    "prisma": "npm run deploy && npm run generate",
     "dev": "nodemon --exec babel-node src/server.js"
   },
   "repository": {
