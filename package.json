@@ -1,0 +1,32 @@
+{
+  "name": "prismasocial",
+  "version": "1.0.0",
+  "description": "Instagram clone with Express + Prisma + React and React Native",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mememamumo/prismasocial.git"
+  },
+  "keywords": [
+    "Prisma"
+  ],
+  "author": "YUNA LEE <mememamumo@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mememamumo/prismasocial/issues"
+  },
+  "homepage": "https://github.com/mememamumo/prismasocial#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "nodemon": "^2.0.4"
+  }
+}
