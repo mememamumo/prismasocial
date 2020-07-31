@@ -23,7 +23,8 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "dotenv": "^8.2.0",
-    "graphql-yoga": "^1.18.3"
+    "graphql-yoga": "^1.18.3",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
