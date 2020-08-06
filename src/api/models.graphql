@@ -5,8 +5,10 @@ type User {
   firstName: String
   lastName: String
   bio: String
-  following: [User!]! 
-  followers: [User!]! 
+  following: [User!]!
+  followingCount: Int!
+  followers: [User!]!
+  followersCount: Int!
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
