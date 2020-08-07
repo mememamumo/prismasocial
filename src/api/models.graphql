@@ -6,14 +6,12 @@ type User {
   lastName: String
   bio: String
   following: [User!]!
-  followingCount: Int!
-  followers: [User!]!
-  followersCount: Int!
+  followers: [User!]! 
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
-	loginSecret: String! 
+	loginSecret: String
 }
 
 type Post {
