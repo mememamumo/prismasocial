@@ -1,4 +1,4 @@
-import { generateSecret } from "../../../utils";
+import { generateSecret, sendSecretMail } from "../../../utils";
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
@@ -6,9 +6,8 @@ export default {
 		requestSecret: async (_, args) => {
 			const { email } = args;
 			const loginSecret = generateSecret();
-			//test to get loginSecret
-			console.log(loginSecret);
 			try {
+				await sendSecretMail(email, loginSecret);
 				await prisma.updateUser({
 					data: { loginSecret },
 					where: { email }
