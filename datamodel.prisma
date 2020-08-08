@@ -6,7 +6,9 @@ type User {
   lastName: String
   bio: String
   following: [User!]! @relation(name: "FollowRelation")
+  followingCount: Int!
   followers: [User!]! @relation(name: "FollowRelation")
+  followersCount: Int!
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
