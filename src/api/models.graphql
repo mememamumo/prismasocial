@@ -6,6 +6,8 @@ type User {
   lastName: String
   fullName: String
   bio: String
+  isFollowing: Boolean!
+  isSelf: Boolean!
   following: [User!]!
   followingCount: Int!
   followers: [User!]! 
@@ -25,6 +27,7 @@ type Post {
   files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
+  isLiked: Boolean!
 }
 
 type Like {

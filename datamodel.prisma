@@ -4,7 +4,10 @@ type User {
   email: String! @unique
   firstName: String @default(value: "")
   lastName: String
+  fullName: String
   bio: String
+  isFollowing: Boolean!
+  isSelf: Boolean!
   following: [User!]! @relation(name: "FollowRelation")
   followingCount: Int!
   followers: [User!]! @relation(name: "FollowRelation")
@@ -24,6 +27,7 @@ type Post {
   files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
+  isLiked: Boolean!
 }
 
 type Like {
