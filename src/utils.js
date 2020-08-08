@@ -1,6 +1,7 @@
 import "./env";
 import { adjectives, nouns } from "./words";
 import sgMail from "@sendgrid/mail";
+import jwt from "jsonwebtoken";
 
 export const generateSecret = () => {
 	const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -27,4 +28,6 @@ export const sendSecretMail = (address, secret) => {
 	};
 	return sendMail(email);
 };
+
+export const generateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
 
