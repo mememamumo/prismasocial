@@ -12,6 +12,7 @@ const sendMail = (msg) => {
 	sgMail
 	.send(msg)
 	.then(() => {
+		console.log("🚀Message Sent");
 	}).catch((error) => {
 		console.log(error.response.body);
 	});
