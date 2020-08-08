@@ -9,6 +9,7 @@ export default {
 		comments: ({ id }) => prisma.user({ id }).comments(),
 		rooms: ({ id }) => prisma.user({ id }).rooms(),
 		followingCount: ({ id }) => prisma.usersConnection({ where: { followers_some: {id }}}).aggregate().count(),
-		followersCount: ({ id }) => prisma.usersConnection({ where: { following_none: { id }}}).aggregate().count()
+		followersCount: ({ id }) => prisma.usersConnection({ where: { following_none: { id }}}).aggregate().count(),
+		fullName: parent => `${parent.firstName} ${parent.lastName}`
 	}
 };

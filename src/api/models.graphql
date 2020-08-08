@@ -4,6 +4,7 @@ type User {
   email: String! 
   firstName: String
   lastName: String
+  fullName: String
   bio: String
   following: [User!]!
   followingCount: Int!
