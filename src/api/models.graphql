@@ -3,6 +3,7 @@ type User {
   avatar: String
   username: String!
   email: String!
+  password: String!
   firstName: String
   lastName: String
   fullName: String
@@ -19,8 +20,8 @@ type User {
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Post {
@@ -34,16 +35,16 @@ type Post {
   isLiked: Boolean!
   likeCount: Int!
   commentCount: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Like {
   id: ID!
   user: User!
   post: Post!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Comment {
@@ -51,24 +52,24 @@ type Comment {
   text: String!
   user: User!
   post: Post!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type File {
   id: ID!
   url: String!
   post: Post!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Room {
   id: ID!
   participants: [User!]!
   messages: [Message!]!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Message {
@@ -77,6 +78,6 @@ type Message {
   from: User!
   to: User!
   room: Room!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: String!
+  updatedAt: String!
 }

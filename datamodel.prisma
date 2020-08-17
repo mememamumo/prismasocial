@@ -5,6 +5,7 @@ type User {
   )
   username: String! @unique
   email: String! @unique
+  password: String!
   firstName: String @default(value: "")
   lastName: String
   bio: String
