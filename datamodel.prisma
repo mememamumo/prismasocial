@@ -1,6 +1,8 @@
 type User {
   id: ID! @id
-  avatar: String
+  avatar: String @default(
+    value: "https://img.icons8.com/ios-filled/500/000000/login-as-user.png"
+  )
   username: String! @unique
   email: String! @unique
   firstName: String @default(value: "")
