@@ -1,0 +1,8 @@
+type ExploreResponse {
+  posts: [Post!]!
+  users: [User!]!
+}
+
+type Query {
+  explore: ExploreResponse!
+}
