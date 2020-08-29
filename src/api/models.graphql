@@ -31,6 +31,7 @@ type Post {
   user: User!
   files: [File!]!
   likes: [Like!]!
+  note: [Notification!]!
   comments: [Comment!]!
   isLiked: Boolean!
   likeCount: Int!
@@ -80,4 +81,20 @@ type Message {
   room: Room!
   createdAt: String!
   updatedAt: String!
+}
+
+enum NoteType {
+  FOLLOW
+  COMMENT
+  LIKE
+}
+
+type Notification {
+  id: ID!
+  from: User!
+  to: User!
+  type: NoteType!
+  post: Post
+  createdAt: String!
+  updatedAt: String
 }

@@ -69,3 +69,28 @@ export const FULL_POST = `
 		}
 	}
 `;
+
+export const NOTIFICATION_FRAGMENT = `
+	fragment NotificationParts on Notification {
+		id
+		createdAt
+		from {
+			id
+			avatar
+			username
+		}
+		to {
+			id
+			avatar
+			username
+		}
+		type
+		post {
+			id
+			files {
+				id
+				url
+			}
+		}
+	}
+`;

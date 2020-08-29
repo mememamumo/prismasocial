@@ -1,0 +1,3 @@
+type Query {
+  seeNotification(username: String!): [Notification!]!
+}
