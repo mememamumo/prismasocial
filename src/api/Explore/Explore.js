@@ -11,7 +11,7 @@ export default {
         const allUsers = await prisma
           .users({
             where: {
-              id_in: [...following.map((user) => user.id), user.id]
+              id_not_in: [...following.map((user) => user.id), user.id]
             },
             orderBy: "createdAt_ASC"
           })
