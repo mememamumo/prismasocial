@@ -1,6 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import createNotification from "../../Notification/createNotification";
-import { FULL_POST } from "../../../fragments";
 
 export default {
   Mutation: {
@@ -41,21 +39,9 @@ export default {
             }
           });
           console.log("좋아요");
-          const creatorOfPost = await prisma
-            .post({ id: postId })
-            .$fragment(FULL_POST);
-          if (user.id !== creatorOfPost.user.id) {
-            await createNotification(
-              user.id,
-              creatorOfPost.user.id,
-              "LIKE",
-              postId
-            );
-          }
         }
         return true;
       } catch (error) {
-        console.log(error);
         return false;
       }
     }

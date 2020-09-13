@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import createNotification from "../../Notification/createNotification";
 
 export default {
   Mutation: {
@@ -20,14 +19,6 @@ export default {
         },
         text
       });
-      if (user.id !== comment.post.user.id) {
-        await createNotification(
-          user.id,
-          comment.post.user.id,
-          "COMMENT",
-          postId
-        );
-      }
       return comment;
     }
   }

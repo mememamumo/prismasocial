@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import createNotification from "../../Notification/createNotification";
 
 export default {
   Mutation: {
@@ -18,9 +17,6 @@ export default {
             }
           }
         });
-        if (user.id !== id) {
-          await createNotification(user.id, id, "FOLLOW");
-        }
         return true;
       } catch {
         return false;
