@@ -104,7 +104,6 @@ dist
 .tern-port
 
 generated
-prisma.yml
 words.js
 
 build
