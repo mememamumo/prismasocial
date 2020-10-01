@@ -106,3 +106,5 @@ dist
 generated
 prisma.yml
 words.js
+
+build
