@@ -10,7 +10,6 @@
     "prebuild": "npm run prisma",
     "build": "babel src -d build",
     "postbuild": "cd src && copy ./api/**/**/*.graphql ../build/ && copy ./api/**/*.graphql ../build/ && copy ./api/*.graphql ../build/",
-    "restart": "npm run build",
     "start": "node build/server.js"
   },
   "repository": {
