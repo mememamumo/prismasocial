@@ -9,7 +9,7 @@
     "dev": "nodemon --exec babel-node src/server.js",
     "prebuild": "npm run prisma",
     "build": "babel src -d build",
-    "postbuild": "cd src && copy ./api/**/**/*.graphql ../build/ && copy ./api/**/*.graphql ../build/",
+    "postbuild": "cd src && copy ./api/**/**/*.graphql ../build/ && copy ./api/**/*.graphql ../build/ && copy ./api/*.graphql ../build/",
     "start": "node build/server.js"
   },
   "repository": {
