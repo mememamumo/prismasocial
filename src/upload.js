@@ -16,7 +16,7 @@ const upload = multer({
     acl: "public-read",
     bucket: "prismasocial",
     metadata: function (req, file, cb) {
-      cb(null, { fileName: file.fieldname });
+      cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
       cb(null, Date.now().toString());
@@ -25,11 +25,19 @@ const upload = multer({
 });
 
 export const uploadMiddleware = upload.single("file");
+export const uploadsMiddleWare = upload.array("file", 5);
 
 export const uploadController = (req, res) => {
   const {
     file: { location }
   } = req;
+  console.log(location);
+  res.json({ location });
+};
+
+export const uploadsController = (req, res) => {
+  const { files } = req;
+  const location = files.map((file) => file.location);
   console.log(location);
   res.json({ location });
 };
