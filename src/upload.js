@@ -24,18 +24,9 @@ const upload = multer({
   })
 });
 
-export const uploadMiddleware = upload.single("file");
-export const uploadsMiddleWare = upload.array("file", 5);
+export const uploadMiddleware = upload.array("file", 5);
 
 export const uploadController = (req, res) => {
-  const {
-    file: { location }
-  } = req;
-  console.log(location);
-  res.json({ location });
-};
-
-export const uploadsController = (req, res) => {
   const { files } = req;
   const location = files.map((file) => file.location);
   console.log(location);

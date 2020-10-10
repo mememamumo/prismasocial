@@ -7,9 +7,7 @@ import { authenticateJwt } from "./passport";
 import { isAuthenticated } from "./middlewares";
 import {
   uploadMiddleware,
-  uploadController,
-  uploadsMiddleWare,
-  uploadsController
+  uploadController
 } from "./upload";
 
 const PORT = process.env.PORT || 8800;
@@ -22,12 +20,6 @@ const server = new GraphQLServer({
 server.express.use(logger("dev"));
 server.express.use(authenticateJwt);
 server.express.post("/api/upload", cors(), uploadMiddleware, uploadController);
-server.express.post(
-  "/api/uploads",
-  cors(),
-  uploadsMiddleWare,
-  uploadsController
-);
 
 server.start({ port: PORT }, () =>
   console.log(`🌏Server running on http://localhost:${PORT}`)
